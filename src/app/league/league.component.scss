@@ -1,0 +1,18 @@
+.league-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.league-card-avatar {
+  background-size: contain;
+  background-repeat: no-repeat
+}
+
+.league-img {
+  object-fit: contain;
+  height: 250px;
+}

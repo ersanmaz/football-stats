@@ -1,1 +1,68 @@
-<pre>{{table('2021')}}</pre>
+<div class="league-table"
+     [ngStyle]="{'background-image': 'linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(../assets/league/' + table.id + '.svg)'}">
+  <!--<img mat-card-image class="" src="../assets/league/{{table.id}}.svg" alt="League flag">-->
+  <mat-table [dataSource]="table.teams" class="mat-elevation-z10">
+    <ng-container matColumnDef="no">
+      <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.position}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="logo">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let team">
+        <img mat-card-image class="club-img" src="{{team.logo}}" alt="club logo">
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Club</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="playedGames">
+      <mat-header-cell *matHeaderCellDef>PG</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.playedGames}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="points">
+      <mat-header-cell *matHeaderCellDef>Points</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.points}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="won">
+      <mat-header-cell *matHeaderCellDef>Won</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.won}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="draw">
+      <mat-header-cell *matHeaderCellDef>Draw</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.draw}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lost">
+      <mat-header-cell *matHeaderCellDef>Lost</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.lost}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="gf">
+      <mat-header-cell *matHeaderCellDef>GF</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.goalsFor}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ga">
+      <mat-header-cell *matHeaderCellDef>GA</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.goalsAgainst}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="gd">
+      <mat-header-cell *matHeaderCellDef>GD</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.goalsDifference}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="form">
+      <mat-header-cell *matHeaderCellDef>Form</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.form}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnHeaders"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnHeaders"></mat-row>
+  </mat-table>
+</div>

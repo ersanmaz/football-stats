@@ -1,5 +1,5 @@
-import {Converter} from './converter';
-import {League} from '../model/league.model';
+import {Converter} from '../converter';
+import {League} from '../../model/league.model';
 import {Injectable} from '@angular/core';
 
 @Injectable({

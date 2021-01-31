@@ -1,7 +1,7 @@
-import { Team.Model } from './team.model';
+import { Team } from './team.model';
 
 describe('Team.Model', () => {
   it('should create an instance', () => {
-    expect(new Team.Model()).toBeTruthy();
+    expect(new Team()).toBeTruthy();
   });
 });

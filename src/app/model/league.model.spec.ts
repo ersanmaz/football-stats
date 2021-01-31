@@ -1,7 +1,7 @@
-import { League } from './league.model';
+import {League} from './league.model';
 
 describe('League', () => {
   it('should create an instance', () => {
-    expect(new League()).toBeTruthy();
+    expect(new League('1', 'some league', 'unknown', 'unknown', 'unknown')).toBeTruthy();
   });
 });

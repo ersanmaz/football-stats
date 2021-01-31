@@ -1,0 +1,29 @@
+.league-table {
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 800px;
+}
+
+.mat-table {
+  background-color: transparent;
+}
+
+.mat-column-no {
+  flex: 0 0 5%;
+}
+
+.mat-column-logo {
+  flex: 0 0 5%;
+}
+
+.mat-column-name {
+  flex: 0 0 20%;
+}
+
+.club-img {
+  object-fit: contain;
+  height: 30px;
+}

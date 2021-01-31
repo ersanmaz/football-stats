@@ -1,1 +1,20 @@
-<p>league works!</p>
+<div class="league-container">
+  <div fxLayout="row wrap" fxLayoutGap="20px grid" fxLayoutAlign="space-around center">
+    <div fxFlex="350px" *ngFor="let league of leagues">
+      <mat-card fxFlex class="mat-elevation-z10">
+        <mat-card-header>
+          <div mat-card-avatar class="league-card-avatar"
+               [ngStyle]="{'background-image': 'url(../assets/country/' + league.countryCode.toLowerCase() + '.svg)'}"></div>
+          <mat-card-title>{{league.title}}</mat-card-title>
+          <mat-card-subtitle>{{league.country}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="league-img" src="../assets/league/{{league.id}}.svg" alt="League flag">
+        <mat-card-actions>
+          <button mat-raised-button color="primary" [routerLink]="['/table', league.id]">Table</button>
+          <button mat-raised-button color="accent">Scores</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

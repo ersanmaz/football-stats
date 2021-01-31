@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TableService} from '../service/table/table.service';
+import {ActivatedRoute} from '@angular/router';
+import {Table} from '../model/table.model';
 
 @Component({
   selector: 'app-table',
@@ -8,14 +10,22 @@ import {TableService} from '../service/table/table.service';
 })
 export class TableComponent implements OnInit {
 
-  constructor(private tableService: TableService) {
+  columnHeaders: string[] = ['no', 'logo', 'name', 'playedGames', 'points', 'won', 'draw', 'lost', 'gf', 'ga', 'gd', 'form'];
+  table: Table = new Table('', '', '', []);
+
+  constructor(private tableService: TableService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+    this.initTable();
   }
 
-  table(id: string): any {
-    this.tableService.getTable(id)
-      .subscribe(value => value);
+  initTable(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id != null) {
+      console.log(`ID: ${id}`);
+      this.tableService.getTable(id).subscribe(table => this.table = table);
+    }
   }
 }

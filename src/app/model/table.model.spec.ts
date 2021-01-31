@@ -1,7 +1,7 @@
-import { Table.Model } from './table.model';
+import { Table } from './table.model';
 
 describe('Table.Model', () => {
   it('should create an instance', () => {
-    expect(new Table.Model()).toBeTruthy();
+    expect(new Table()).toBeTruthy();
   });
 });
